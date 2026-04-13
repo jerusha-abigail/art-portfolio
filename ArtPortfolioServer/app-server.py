@@ -22,11 +22,11 @@ def add_numbers():
     return jsonify({'sum': result})
 
 @app.route('/register', methods=['GET'])
-def register_user()
+def register_user():
     return "<p>Not, Implemented!</p>"
 
 @app.route('/login', methods=['GET'])
-def login_user()
+def login_user():
     return "<p>Not, Implemented!</p>"
 
 if __name__ == "__main__":
