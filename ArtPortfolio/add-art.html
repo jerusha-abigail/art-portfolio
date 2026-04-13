@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Art Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header - appears on all pages -->
+    <header>
+        <h1>Art Portfolio</h1>
+    </header>
+
+    <main>
+
+        <form>
+                <!-- Title -->
+                <div class="form-group">
+                    <h3>
+                        <label for="title">Title</label></br>
+                        <input type="text" id="title" name="title" required placeholder="Enter artwork title">
+                    </h3>
+                </div>
+                <!-- Image upload -->
+                <div>
+                    <h3>
+                        <label for="imageFile">Select Image</label>
+                        <input type="file"  name="imageFile" id="imageFile" accept="image/*" required>
+                    </h3>
+                
+                </div>
+                <!-- Creation Date -->
+                <div class="form-group">
+                    <label for="creationDate">Creation Date</label>
+                    <input type="date" id="creationDate" name="creationDate" required>
+                
+                </div>
+                <!-- Description -->
+                <div>
+                    <label for="description">Description</label>
+                    <textarea id="description" name="description" rows="4" required placeholder="Describe your artwork"></textarea>
+                
+
+                
+                    <button type="submit" >Save Artwork</button>
+                </div>
+
+        </form>
+
+        <div>
+            <button onclick="redirectToPage()" >← Cancel</button>
+        </div>
+
+
+    </main>
+    <script>
+        function redirectToPage() {
+            window.location.href = "gallery.html";   
+            //window.open("gallery.html");    
+        }
+
+    </script>
+    
+</body>

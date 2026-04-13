@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Numbers with Fetch API</title>
+</head>
+<body>
+    <h2>Add Two Numbers using Fetch API</h2>
+    
+    <div>
+        <label for="x">Number 1 (x):</label>
+        <input type="number" id="x" required><br><br>
+        
+        <label for="y">Number 2 (y):</label>
+        <input type="number" id="y" required><br><br>
+        
+        <!-- Replaced submit button with a standard button and added an onClick event -->
+        <button id="submitBtn">Calculate Sum</button>
+    </div>
+
+    <!-- Area to display the result -->
+    <h3>Result: <span id="result"></span></h3>
+
+    <script>
+        // Get references to the input fields, button, and result display area
+        const xInput = document.getElementById('x');
+        const yInput = document.getElementById('y');
+        const submitBtn = document.getElementById('submitBtn');
+        const resultSpan = document.getElementById('result');
+
+        
+        async function call_add_method(event) {                   
+            try {                
+                // Await pauses execution until the fetch is complete
+                const response = await fetch(`http://localhost:9001/add?x=${xInput.value}&y=${yInput.value}`);
+
+                // Check if the request was successful
+                if (!response.ok)
+                {
+                    throw new Error(`HTTP error! status: ${response.status}`);                    
+                }
+                
+                // Await the conversion to JSON
+                const output = await response.json();
+                resultSpan.textContent = output.sum;
+
+            }catch (error) 
+            {                
+                console.error('There has been a problem with your fetch operation:', error);
+                resultSpan.textContent = 'Error: ' + error.message;
+            }            
+        }       
+        
+        // Add a click event listener to the button
+        submitBtn.addEventListener('click', call_add_method);
+    </script>
+</body>
+</html>

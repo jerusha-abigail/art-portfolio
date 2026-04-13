@@ -1,0 +1,38 @@
+<!DOCTYPE html> <!-- so the browser understands how to read the code -->
+<html lang = "en"> <!--So the browser understands the language of the website-->
+
+<head> <!--contains everything the website needs (user can't see it)-->
+    <meta charset="UTF-8"> <!--lets the page display characters (UTF-8 can display almost all languages and basically anything) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--<meta name="what you are setting" content="the settings">-->
+    <title>Login - ArtPortfolio</title> <!--this would show up in bookmarks and stuff but not the actual web page-->
+    <link rel="stylesheet" href="style.css">    
+    <script src="script.js" defer></script>
+</head>
+
+
+<body>
+
+    <header>
+        <h1>ArtPortfolio</h1>
+    </header>
+
+    <main class="auth-container">
+        <div>
+            <form>
+
+                <h2>Create New Account</h2>
+                <h3>Username</h3>
+                <input type="text" placeholder="Enter username" required minlength="5" maxlength="10"><br>
+                <h3>Email</h3>
+                <input type="email" placeholder="Enter email" required><br>
+                <h3>Password</h3>
+                <input type="password" id="pwd" name="password" placeholder="Enter password" required minlength="6" maxlength="10"><br>
+                <span>Password should have 6 characters and atleast one letter and one number</span>
+                <br>
+                <input type="submit" value="Submit">
+
+            </form>
+            <p>Already have an account? <a href="login.html">Login</a> </p>
+        </div>
+    </main>    
+</body>
