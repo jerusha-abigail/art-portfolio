@@ -1,0 +1,10 @@
+start web server
+in terminal 1
+cd ArtPortfolio
+python -m http.server 9000
+
+start app server
+in terminal 2
+cd ArtPortfolioServer
+(pip install -r requirements.txt  - ONLY FIRST TIME, NO NEED TO RUN)
+python app-server.py
